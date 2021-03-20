@@ -1,6 +1,9 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", deviceReadyTest, false);
 
-function onDeviceReady() {
-    
-  alert("Pariksha");
+function deviceReadyTest() {
+  //alert("Pariksha");
+}
+
+function testFunction() {
+  alert("User Signup clicked");
 }
