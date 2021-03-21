@@ -6,15 +6,18 @@ function deviceReadyTest() {
 
   // binding the event with jquery
   $("#user_signup").click(userSignup);
+  $("#user_login").click(userLogin);
 }
 
 function userSignup() {
   // alert("User Signup clicked");
 
   // read the user input
+  // validate the password
+  // store user data
   // check if password is empty and valid
   if (
-    $("#password").val().trim().length > 0 &&
+    $("#password").val().trim().length >0 &&
     $("#password").val() == $("#confirm_password").val()
   ) {
     localStorage.setItem("USER", $("#userName").val());
@@ -25,7 +28,15 @@ function userSignup() {
   } else {
     alert("Invalid password!");
   }
-  // validate the password
+}
 
-  // store user data
+function userLogin() {
+  if (
+    $("#login_userName").val() == localStorage.getItem("USER") &&
+    $("#login_password").val() == localStorage.getItem("PASSWORD")
+  ) {
+    alert("Welcome to my to do list app");
+  } else {
+    alert("Invalid credentials!");
+  }
 }
