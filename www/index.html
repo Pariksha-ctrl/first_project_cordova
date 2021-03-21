@@ -24,6 +24,51 @@
     <title>Hello World</title>
   </head>
   <body>
+    <!-- Start of sign in page -->
+    <div data-role="page" id="login">
+      <!-- header -->
+      <div data-role="header" style="background-color: white">
+        <div class="header_logo">
+          <img class="logo" src="img/logo.png" />
+        </div>
+        <br />
+      </div>
+      <!-- /header -->
+
+      <!-- content -->
+      <div role="main" class="ui-content">
+        <label for="login_userName">Username:</label>
+        <input type="text" name="login_userName" id="login_userName" value="" />
+        <br />
+
+        <label for="login_password">Password:</label>
+        <input
+          type="password"
+          name="login_password"
+          id="login_password"
+          value=""
+        />
+        <br />
+        <br />
+        <br />
+
+        <div style="text-align: center">
+          <a href="#" class="ui-btn ui-btn-a" id="user_login">Login</a>
+          <br />
+        </div>
+
+        <br />
+        <a href="#signup" class="ui-btn ui-btn-b">Signup</a>
+        <br /><br />
+      </div>
+      <!-- /content -->
+
+      <!-- footer -->
+      <div data-role="footer" style="text-align: center"></div>
+      <!-- /footer -->
+    </div>
+    <!-- End of sign in page -->
+
     <!-- Start of signup page -->
     <div data-role="page" id="signup">
       <!-- header -->
@@ -348,10 +393,11 @@
       <!-- footer -->
       <div data-role="footer" style="text-align: center"></div>
       <!-- /footer -->
-    </div> <!-- End of signup page -->
+    </div>
+    <!-- End of signup page -->
 
-    <!-- Start of sign in page -->
-    <div data-role="page" id="login">
+    <!-- Start of main/landing page -->
+    <div data-role="page" id="main">
       <!-- header -->
       <div data-role="header" style="background-color: white">
         <div class="header_logo">
@@ -362,37 +408,15 @@
       <!-- /header -->
 
       <!-- content -->
-      <div role="main" class="ui-content">
-        <label for="login_userName">Username:</label>
-        <input type="text" name="login_userName" id="login_userName" value="" />
-        <br />
-
-        <label for="login_password">Password:</label>
-        <input
-          type="password"
-          name="login_password"
-          id="login_password"
-          value=""
-        />
-        <br />
-        <br />
-        <br />
-
-        <div style="text-align: center">
-          <a href="#" class="ui-btn ui-btn-a" id="user_login">Login</a>
-          <br />
-        </div>
-
-        <br />
-        <a href="#" class="ui-btn ui-btn-b">Signup</a>
-        <br /><br />
-      </div>
+      <!-- welcome + reading the user name -->
+      <h1>Welcome <span id="welcome_userName">####</span></h1>
       <!-- /content -->
 
       <!-- footer -->
       <div data-role="footer" style="text-align: center"></div>
       <!-- /footer -->
-    </div> <!-- End of sign in page -->
+    </div>
+    <!-- End of main/landing page -->
 
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>

@@ -17,7 +17,7 @@ function userSignup() {
   // store user data
   // check if password is empty and valid
   if (
-    $("#password").val().trim().length >0 &&
+    $("#password").val().trim().length > 0 &&
     $("#password").val() == $("#confirm_password").val()
   ) {
     localStorage.setItem("USER", $("#userName").val());
@@ -35,7 +35,7 @@ function userLogin() {
     $("#login_userName").val() == localStorage.getItem("USER") &&
     $("#login_password").val() == localStorage.getItem("PASSWORD")
   ) {
-    alert("Welcome to my to do list app");
+    window.location.href = "#main";
   } else {
     alert("Invalid credentials!");
   }
