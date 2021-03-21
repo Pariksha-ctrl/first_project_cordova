@@ -24,9 +24,6 @@
     <title>Hello World</title>
   </head>
   <body>
-    <!-- Start of login page -->
-    <!-- <div data-role="page" id="login"></div> -->
-
     <!-- Start of signup page -->
     <div data-role="page" id="signup">
       <!-- header -->
@@ -354,7 +351,40 @@
     </div>
 
     <!-- Start of sign in page -->
-    <div data-role="page" id="login"></div>
+    <div data-role="page" id="login">
+      <!-- header -->
+      <div data-role="header" style="background-color: white">
+        <div class="header_logo">
+          <img class="logo" src="img/logo.png" />
+        </div>
+        <br />
+      </div>
+      <!-- /header -->
+
+      <!-- content -->
+      <div role="main" class="ui-content">
+        <label for="userName">Username:</label>
+        <input type="text" name="userName" id="userName" value="" />
+        <br />
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="" />
+        <br />
+        <br />
+        <br />
+
+        <div style="text-align: center">
+          <a href="#" id="user_login" class="ui-btn ui-btn-a">Login</a>
+          <br />
+          <br />
+        </div>
+      </div>
+      <!-- /content -->
+
+      <!-- footer -->
+      <div data-role="footer" style="text-align: center"></div>
+      <!-- /footer -->
+    </div>
 
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
