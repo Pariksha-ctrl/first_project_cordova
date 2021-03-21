@@ -9,5 +9,19 @@ function deviceReadyTest() {
 }
 
 function userSignup() {
-  alert("User Signup clicked");
+  // alert("User Signup clicked");
+
+  // read the user input
+
+  if ($("#password").val() == $("#confirm_password").val()) {
+    localStorage.setItem("USER", $("#userName").val());
+    localStorage.setItem("PASSWORD", $("#confirm_password").val());
+
+    // to navigate to the sign in page
+  } else {
+    alert("Invalid password!");
+  }
+  // validate the password
+
+  // store user data
 }
