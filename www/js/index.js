@@ -1,9 +1,10 @@
 document.addEventListener("deviceready", deviceReadyTest, false);
 
 function deviceReadyTest() {
-  //alert("Pariksha");
+  // binding the event
+  document.getElementById("user_signup").addEventListener("click", userSignup);
 }
 
-function testFunction() {
+function userSignup() {
   alert("User Signup clicked");
 }
