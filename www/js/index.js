@@ -18,6 +18,7 @@ function userSignup() {
     localStorage.setItem("PASSWORD", $("#confirm_password").val());
 
     // to navigate to the sign in page
+    window.location.href = '#login'
   } else {
     alert("Invalid password!");
   }
