@@ -12,13 +12,16 @@ function userSignup() {
   // alert("User Signup clicked");
 
   // read the user input
-
-  if ($("#password").val() == $("#confirm_password").val()) {
+  // check if password is empty and valid
+  if (
+    $("#password").val().trim().length > 0 &&
+    $("#password").val() == $("#confirm_password").val()
+  ) {
     localStorage.setItem("USER", $("#userName").val());
     localStorage.setItem("PASSWORD", $("#confirm_password").val());
 
     // to navigate to the sign in page
-    window.location.href = '#login'
+    window.location.href = "#login";
   } else {
     alert("Invalid password!");
   }
