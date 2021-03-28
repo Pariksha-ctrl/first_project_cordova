@@ -1,14 +1,16 @@
 document.addEventListener("deviceready", deviceReadyTest, false);
-document.addEventListener("pause", onPause, false);
-document.addEventListener("resume", onResume, false);
+//document.addEventListener("pause", onPause, false);
+//document.addEventListener("resume", onResume, false);
 
 function deviceReadyTest() {
   // binding the event with vanilla javascript
   //   document.getElementById("user_signup").addEventListener("click", userSignup);
 
   // binding the event with jquery
-  $("#user_signup").click(userSignup);
-  $("#user_login").click(userLogin);
+  // $("#user_signup").click(userSignup);
+  // $("#user_login").click(userLogin);
+
+  navigator.camera.getPicture(cameraSuccess, cameraError, {});
 }
 
 function onPause() {
@@ -17,6 +19,14 @@ function onPause() {
 
 function onResume() {
   alert("App is on Resume");
+}
+
+function cameraSuccess(imageUri) {
+  console.log(imageUri);
+}
+
+function cameraError(message) {
+  alert("Failed because: " + message);
 }
 
 function userSignup() {
