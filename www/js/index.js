@@ -1,6 +1,6 @@
 document.addEventListener("deviceready", deviceReadyTest, false);
-//document.addEventListener("pause", onPause, false);
-//document.addEventListener("resume", onResume, false);
+document.addEventListener("pause", onPause, false);
+document.addEventListener("resume", onResume, false);
 
 function deviceReadyTest() {
   // binding the event with vanilla javascript
@@ -13,6 +13,7 @@ function deviceReadyTest() {
   //navigator.camera.getPicture(cameraSuccess, cameraError, {});
 }
 
+/****************** EVENT *********************/
 function onPause() {
   alert("App is on Pause");
 }
@@ -21,6 +22,7 @@ function onResume() {
   alert("App is on Resume");
 }
 
+/****************** CAMERA *********************/
 // function cameraSuccess(imageUri) {
 //   console.log(imageUri);
 // }
