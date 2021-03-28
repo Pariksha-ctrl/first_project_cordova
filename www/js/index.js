@@ -7,10 +7,10 @@ function deviceReadyTest() {
   //   document.getElementById("user_signup").addEventListener("click", userSignup);
 
   // binding the event with jquery
-  // $("#user_signup").click(userSignup);
-  // $("#user_login").click(userLogin);
+  $("#user_signup").click(userSignup);
+  $("#user_login").click(userLogin);
 
-  navigator.camera.getPicture(cameraSuccess, cameraError, {});
+  //navigator.camera.getPicture(cameraSuccess, cameraError, {});
 }
 
 function onPause() {
@@ -21,13 +21,13 @@ function onResume() {
   alert("App is on Resume");
 }
 
-function cameraSuccess(imageUri) {
-  console.log(imageUri);
-}
+// function cameraSuccess(imageUri) {
+//   console.log(imageUri);
+// }
 
-function cameraError(message) {
-  alert("Failed because: " + message);
-}
+// function cameraError(message) {
+//   alert("Failed because: " + message);
+// }
 
 function userSignup() {
   // alert("User Signup clicked");
