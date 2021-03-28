@@ -1,4 +1,6 @@
 document.addEventListener("deviceready", deviceReadyTest, false);
+document.addEventListener("pause", onPause, false);
+document.addEventListener("resume", onResume, false);
 
 function deviceReadyTest() {
   // binding the event with vanilla javascript
@@ -7,6 +9,14 @@ function deviceReadyTest() {
   // binding the event with jquery
   $("#user_signup").click(userSignup);
   $("#user_login").click(userLogin);
+}
+
+function onPause() {
+  alert("App is on Pause");
+}
+
+function onResume() {
+  alert("App is on Resume");
 }
 
 function userSignup() {
