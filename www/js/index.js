@@ -9,6 +9,8 @@ function deviceReadyTest() {
   // binding the event with jquery
   $("#user_signup").click(userSignup);
   $("#user_login").click(userLogin);
+  //$("#add_task_button").click(addTask);
+  //document.getElementById("add_task_button").addEventListener("click", addTask);
 
   //navigator.camera.getPicture(cameraSuccess, cameraError, {});
 }
@@ -61,4 +63,38 @@ function userLogin() {
   } else {
     alert("Invalid credentials!");
   }
+}
+
+//function addTask() {
+// let add_task_input = document.getElementById("add_task_input");
+// let add_task_button = document.getElementById("add_task_button");
+
+// add_task_input_value = add_task_input.val;
+// // Assuming that the local storage has some data
+// let web_task = localStorage.getItem("localtask");
+// if (web_task == null) {
+//   task_obj = [];
+// } else {
+//   task_obj = JSON.parse(web_task);
+// }
+
+// // adding new value to the array
+// // putting new value into the local storage
+// localStorage.setItem("localtask", task_obj);
+
+//   var newTaskItem = $("add_task_input").val();
+//   // to prevent adding empty items, we will check the length
+//   if (newTaskItem.length > 0) {
+//     $("added_task_list").append("<td>" + newTaskItem + "</td>");
+//     $("add_task_input").val("");
+//   }
+// }
+
+$(document).ready(addTask());
+$("#add_task_button").click(addTask());
+var newTaskItem = $("add_task_input").val();
+// to prevent adding empty items, we will check the length
+if (newTaskItem.length > 0) {
+  $("added_task_list").append("<td>" + newTaskItem + "</td>");
+  $("add_task_input").val("");
 }
