@@ -9,7 +9,7 @@ function deviceReadyTest() {
   // binding the event with jquery
   $("#user_signup").click(userSignup);
   $("#user_login").click(userLogin);
-  //$("#add_task_button").click(addTask);
+  $("#add_task_button").click(addTask);
   //document.getElementById("add_task_button").addEventListener("click", addTask);
 
   //navigator.camera.getPicture(cameraSuccess, cameraError, {});
@@ -65,6 +65,16 @@ function userLogin() {
   }
 }
 
+function addTask() {
+  //$(document).ready(addTask());
+  var newTask = $("#add_to_list").val();
+  // to prevent adding empty items, we will check the length
+  if (newTask.length > 0) {
+    $("#to_do_list").append("<li>" + newTask + "</li>");
+    $("#add_to_list").val("");
+  }
+}
+
 //function addTask() {
 // let add_task_input = document.getElementById("add_task_input");
 // let add_task_button = document.getElementById("add_task_button");
@@ -90,11 +100,11 @@ function userLogin() {
 //   }
 // }
 
-$(document).ready(addTask());
-$("#add_task_button").click(addTask());
-var newTaskItem = $("add_task_input").val();
-// to prevent adding empty items, we will check the length
-if (newTaskItem.length > 0) {
-  $("added_task_list").append("<td>" + newTaskItem + "</td>");
-  $("add_task_input").val("");
-}
+// $(document).ready(addTask());
+// $("#add_task_button").click(addTask());
+// var newTask = $("#add_to_list").val();
+// // to prevent adding empty items, we will check the length
+// if (newTask.length > 0) {
+//   $("#to_do_list").append("<li>" + newTask + "</li>");
+//   $("#add_to_list").val("");
+//}
