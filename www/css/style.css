@@ -2,5 +2,32 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  width: 40%;
 }
+
+.myHeader.ui-header.ui-bar-inherit {
+  background-color: #1c1e21;
+}
+
+/* .main_content {
+  background-color: lightblue;
+  padding: 10px 10px;
+  color: white;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  display: block;
+}
+
+.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset {
+  width: 60%;
+}
+
+button#add_task_button {
+  width: 20%;
+} */

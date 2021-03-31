@@ -10,6 +10,7 @@ function deviceReadyTest() {
   $("#user_signup").click(userSignup);
   $("#user_login").click(userLogin);
   $("#add_task_button").click(addTask);
+
   //document.getElementById("add_task_button").addEventListener("click", addTask);
 
   //navigator.camera.getPicture(cameraSuccess, cameraError, {});
@@ -65,6 +66,8 @@ function userLogin() {
   }
 }
 
+// RUNNINNG CODE
+
 function addTask() {
   //$(document).ready(addTask());
   var newTask = $("#add_to_list").val();
@@ -74,6 +77,8 @@ function addTask() {
     $("#add_to_list").val("");
   }
 }
+
+// /RUNNINNG CODE
 
 //function addTask() {
 // let add_task_input = document.getElementById("add_task_input");
