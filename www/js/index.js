@@ -1,6 +1,6 @@
 document.addEventListener("deviceready", deviceReadyTest, false);
-document.addEventListener("pause", onPause, false);
-document.addEventListener("resume", onResume, false);
+//document.addEventListener("pause", onPause, false);
+//document.addEventListener("resume", onResume, false);
 
 function deviceReadyTest() {
   // binding the event with vanilla javascript
