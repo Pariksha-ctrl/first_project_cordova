@@ -66,17 +66,40 @@ function userLogin() {
   }
 }
 
-// RUNNINNG CODE
+function addListItem() {
+  var text = $("#new-text").val();
+  $("#todo-list").append(
+    '<li ><input type="checkbox" class="toggle"/ ><span class="text">' +
+      text +
+      ' </span><button class="destroy"></button></li>'
+  );
+  $("#new-text").val("");
+}
 
 function addTask() {
-  //$(document).ready(addTask());
   var newTask = $("#add_to_list").val();
   // to prevent adding empty items, we will check the length
   if (newTask.length > 0) {
-    $("#to_do_list").append("<li>" + newTask + "</li>");
+    $("#to_do_list").append(
+      '<li ><input type="checkbox" class="toggle"/ ><span class="text">' +
+        newTask +
+        " </span></li>"
+    );
     $("#add_to_list").val("");
   }
 }
+
+// RUNNINNG CODE
+
+// function addTask() {
+//   //$(document).ready(addTask());
+//   var newTask = $("#add_to_list").val();
+//   // to prevent adding empty items, we will check the length
+//   if (newTask.length > 0) {
+//     $("#to_do_list").append("<li>" + newTask + "</li>");
+//     $("#add_to_list").val("");
+//   }
+// }
 
 // /RUNNINNG CODE
 
