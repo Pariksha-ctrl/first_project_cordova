@@ -6,6 +6,10 @@ function deviceReadyTest() {
   $("#user_signup").click(userSignup);
   $("#user_login").click(userLogin);
   $("#add_task_button").click(AddTaskItem);
+  $(document).on("click", ".destroy", deleteTask);
+  $(document).on("click", ".toggle", markItemCompleted);
+  $("#mark_task_completed").click(MarkTaskCompleted);
+  $("delete_completed_task").click(DeleteCompletedTask);
 
   //document.getElementById("add_task_button").addEventListener("click", addTask);
   //navigator.camera.getPicture(cameraSuccess, cameraError, {});
@@ -57,13 +61,30 @@ function AddTaskItem() {
   var $toDoList = $("#to_do_list");
   var $newTask = $("newTask");
   var AddListItem_prependString =
-    '<li><input type="checkbox" class="toggle" /><span class="text">';
+    '<li><input type="checkbox" id="toggle_task" class="toggle" /><span class="text">';
   var AddListItem_appendString =
     '</span><button class="destroy"></button></li>';
   $toDoList.append(
     AddListItem_prependString + $("#new_task").val() + AddListItem_appendString
   );
   $newTask.val("");
+}
+
+function deleteTask() {
+  $(this).closest("li").remove();
+}
+
+function markItemCompleted() {
+  $(this).closest("li").toggleClass("completedItem");
+}
+
+function MarkTaskCompleted() {
+  //set all the task items or li's as completed/uncompleted based in the markitemcompleted checkbox
+  $toDoList.find("li").addClass("completedItem", this.checked);
+}
+
+function DeleteCompletedTask() {
+  $toDoList.find(".toggle:checked").closest("li").remove();
 }
 
 // function addTask() {
