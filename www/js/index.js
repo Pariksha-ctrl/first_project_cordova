@@ -3,9 +3,6 @@ document.addEventListener("deviceready", deviceReadyTest, false);
 //document.addEventListener("resume", onResume, false);
 
 function deviceReadyTest() {
-  // binding the event with vanilla javascript
-  //   document.getElementById("user_signup").addEventListener("click", userSignup);
-  // binding the event with jquery
   $("#user_signup").click(userSignup);
   $("#user_login").click(userLogin);
   $("#add_task_button").click(AddTaskItem);
@@ -69,19 +66,31 @@ function AddTaskItem() {
   $newTask.val("");
 }
 
-function addTask() {
-  var newTask = $("#add_to_list").val();
-  if (newTask.length > 0) {
-    $("#to_do_list").append(
-      '<li ><input type="checkbox" id="mark_task_done" class="toggle"/ ><span class="text">' +
-        newTask +
-        ' </span><button class="destroy"></button></li>'
-    );
-    $("#add_to_list").val("");
-  }
-}
+// function addTask() {
+//   var newTask = $("#add_to_list").val();
+//   if (newTask.length > 0) {
+//     $("#to_do_list").append(
+//       '<li ><input type="checkbox" id="mark_task_done" class="toggle"/ ><span class="text">' +
+//         newTask +
+//         ' </span><button class="destroy"></button></li>'
+//     );
+//     $("#add_to_list").val("");
+//   }
+// }
 
 // /RUNNINNG CODE
+
+// function addTask() {
+//   var newTask = $("#add_to_list").val();
+//   if (newTask.length > 0) {
+//     $("#to_do_list").append(
+//       '<li ><input type="checkbox" id="mark_task_done" class="toggle"/ ><span class="text">' +
+//         newTask +
+//         ' </span><button class="destroy"></button></li>'
+//     );
+//     $("#add_to_list").val("");
+//   }
+// }
 
 //function addTask() {
 // let add_task_input = document.getElementById("add_task_input");

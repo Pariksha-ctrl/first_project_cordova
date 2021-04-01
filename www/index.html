@@ -48,13 +48,20 @@
 
       <!-- content -->
       <body>
-            <div class="main_content">                           
-              <input type="text" id="new_task" placeholder="Enter Task To Do" />              
-              <button id="add_task_button">ADD</button>
-              <ul id="to_do_list"></ul></br>
-              <br>
-            </div>
-          </body>
+        <div class="main_content">
+          <input type="text" id="new_task" placeholder="Enter Task To Do" />
+          <button id="add_task_button">ADD</button>
+          <ul id="to_do_list"></ul>
+          <br />
+          <br />
+          <input type="checkbox" id="mark_all_task_as_completed" />
+          <br />
+          <br />
+          <button type="checkbox" id="delete_all_completed_task">
+            Delete All Completed Task
+          </button>
+        </div>
+      </body>
       <!-- /content -->
       <!-- footer -->
       <div data-role="footer" style="text-align: center"></div>
@@ -114,7 +121,6 @@
         <div class="header_logo">
           <img class="logo" src="img/logo.png" />
         </div>
-        <br />
       </div>
       <!-- /header -->
 
