@@ -9,7 +9,10 @@ function deviceReadyTest() {
   $(document).on("click", ".destroy", deleteTask);
   $(document).on("click", ".toggle", markItemCompleted);
   $("#mark_task_completed").click(MarkTaskCompleted);
+  $("#mark_task_completed").click(LineThroughTask);
   $("delete_completed_task").click(DeleteCompletedTask);
+  $("to_do_list").on("dblclick", "span", editTask);
+  $("escape_button").click(EscapeEditing);
 
   //document.getElementById("add_task_button").addEventListener("click", addTask);
   //navigator.camera.getPicture(cameraSuccess, cameraError, {});
@@ -59,7 +62,7 @@ function userLogin() {
 
 function AddTaskItem() {
   var $toDoList = $("#to_do_list");
-  var $newTask = $("newTask");
+  var $newTask = $("#new_task");
   var AddListItem_prependString =
     '<li><input type="checkbox" id="toggle_task" class="toggle" /><span class="text">';
   var AddListItem_appendString =
@@ -85,6 +88,37 @@ function MarkTaskCompleted() {
 
 function DeleteCompletedTask() {
   $toDoList.find(".toggle:checked").closest("li").remove();
+}
+
+function editTask() {
+  $el = $('<input type="text" class="edit_text"/>');
+  $(this).replaceWith($el);
+  $el.val(this.innerHTML).focus();
+  $(this).find(".text, .destroy").hide();
+}
+
+$("#to_do_list").on("keyup", ".edit_text", function (e) {
+  // Check if enter is pressed:
+  if (e.keyCode === 13) {
+    $(this).replaceWith($('<span class="text">' + $(this).val() + "</span>"));
+  }
+
+//   // Check if ESCAPE is pressed:
+//   if $("#escape_button").click(function() {
+
+//     $(".in-edit-text").remove();
+//   }
+// });
+
+function LineThroughTask() {
+  $("input:checkbox").not(this).prop("checked", this.checked);
+  if ($("li").css("textDecoration") == "line-through") {
+    $("li").css("textDecoration", "none");
+    $("li").parent().css("opacity", "1");
+  } else {
+    $("li").css("textDecoration", "line-through");
+    $("li").parent().css("opacity", "0.5");
+  }
 }
 
 // function addTask() {
