@@ -7,10 +7,13 @@ function deviceReadyTest() {
   $("#user_login").click(userLogin);
   $("#add_task_button").click(AddTaskItem);
   $(document).on("click", ".destroy", deleteTask);
-  $(document).on("click", ".toggle", toggleEachItemAsCompleted);
-  $(document).on("click", ".toggle", markAllItemAsCompleted);
-  $(document).on("click", ".toggle", toggleAllItemCompleted);
-  $("#toggle_all_Item").click(ToggleAllItem);
+  $(document).on("click", ".toggle", markEachItemAsCompleted);
+  $("#delete_all_completed_task").click(DeleteAllCompletedTask);
+  $("#to_do_list").on("dblclick", ".span", editEachItem);
+  $("#to_do_list").on("keyup", ".in-edit-text", replaceWithNewItem);
+
+  // $(document).on("click", ".toggle", markAllItemAsCompleted);
+  // $(document).on("click", ".toggle", toggleAllItemCompleted);
 
   //navigator.camera.getPicture(cameraSuccess, cameraError, {});
 }
@@ -75,31 +78,18 @@ function deleteTask() {
   $(this).closest("li").remove();
 }
 
-// to toggle each task item as completed - i.e when toggle of each item on right side is clicked there will be line-through the item
-function toggleEachItemAsCompleted() {
+// to mark each task item as completed - i.e when toggle of each item on right side is clicked there will be line-through the item
+function markEachItemAsCompleted() {
   if ($(this).parent().css("textDecoration") == "line-through") {
-    $(this).parent().css("textDecoration", none);
-    $(this).parent().css("opacity", 1);
+    $(this).parent().css("textDecoration", "none");
+    $(this).parent().css("opacity", "1");
   } else {
     $(this).parent().css("textDecoration", "line-through");
     $(this).parent().css("opacity", "0.50");
   }
 }
 
-// function markAllItemAsCompleted() {
-//   if ($(this).parent().css("textDecoration") == "line-through") {
-//     $(this).parent().css("textDecoration", "none");
-//     $(this).parent().css("opacity", "1");
-//   } else {
-//     $(this).parent().css("textDecoration", "line-through");
-//     $(this).parent().css("opacity", "0.50");
-//   }
-// }
-
-// function toggleAllItemCompleted() {
-//   $(this).closest("li").toggleClass("completedItem");
-// }
-
-// function ToggleAllItem() {
-//   $toDoList.find("li").addClass("completedItem", this.checked);
-// }
+// this will delete the task that has been marked as completed with line-through
+function DeleteAllCompletedTask() {
+  $("#to_do_list .toggle:checked").parent().remove();
+}

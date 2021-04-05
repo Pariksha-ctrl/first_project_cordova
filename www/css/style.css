@@ -125,3 +125,7 @@ button {
 button#add_task_button {
   margin-top: 20px;
 }
+
+button#delete_all_completed_task {
+  color: red;
+}
