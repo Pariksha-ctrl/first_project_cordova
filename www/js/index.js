@@ -7,14 +7,11 @@ function deviceReadyTest() {
   $("#user_login").click(userLogin);
   $("#add_task_button").click(AddTaskItem);
   $(document).on("click", ".destroy", deleteTask);
-  $(document).on("click", ".toggle", markItemCompleted);
-  $("#mark_task_completed").click(MarkTaskCompleted);
-  $("#mark_task_completed").click(LineThroughTask);
-  $("delete_completed_task").click(DeleteCompletedTask);
-  $("to_do_list").on("dblclick", "span", editTask);
-  $("escape_button").click(EscapeEditing);
+  $(document).on("click", ".toggle", toggleEachItemAsCompleted);
+  $(document).on("click", ".toggle", markAllItemAsCompleted);
+  $(document).on("click", ".toggle", toggleAllItemCompleted);
+  $("#toggle_all_Item").click(ToggleAllItem);
 
-  //document.getElementById("add_task_button").addEventListener("click", addTask);
   //navigator.camera.getPicture(cameraSuccess, cameraError, {});
 }
 
@@ -64,7 +61,7 @@ function AddTaskItem() {
   var $toDoList = $("#to_do_list");
   var $newTask = $("#new_task");
   var AddListItem_prependString =
-    '<li><input type="checkbox" id="toggle_task" class="toggle" /><span class="text">';
+    '<li><input type="checkbox" class="toggle" /><span class="text">';
   var AddListItem_appendString =
     '</span><button class="destroy"></button></li>';
   $toDoList.append(
@@ -73,110 +70,36 @@ function AddTaskItem() {
   $newTask.val("");
 }
 
+// to delete task one by one
 function deleteTask() {
   $(this).closest("li").remove();
 }
 
-function markItemCompleted() {
-  $(this).closest("li").toggleClass("completedItem");
-}
-
-function MarkTaskCompleted() {
-  //set all the task items or li's as completed/uncompleted based in the markitemcompleted checkbox
-  $toDoList.find("li").addClass("completedItem", this.checked);
-}
-
-function DeleteCompletedTask() {
-  $toDoList.find(".toggle:checked").closest("li").remove();
-}
-
-function editTask() {
-  $el = $('<input type="text" class="edit_text"/>');
-  $(this).replaceWith($el);
-  $el.val(this.innerHTML).focus();
-  $(this).find(".text, .destroy").hide();
-}
-
-$("#to_do_list").on("keyup", ".edit_text", function (e) {
-  // Check if enter is pressed:
-  if (e.keyCode === 13) {
-    $(this).replaceWith($('<span class="text">' + $(this).val() + "</span>"));
-  }
-
-//   // Check if ESCAPE is pressed:
-//   if $("#escape_button").click(function() {
-
-//     $(".in-edit-text").remove();
-//   }
-// });
-
-function LineThroughTask() {
-  $("input:checkbox").not(this).prop("checked", this.checked);
-  if ($("li").css("textDecoration") == "line-through") {
-    $("li").css("textDecoration", "none");
-    $("li").parent().css("opacity", "1");
+// to toggle each task item as completed - i.e when toggle of each item on right side is clicked there will be line-through the item
+function toggleEachItemAsCompleted() {
+  if ($(this).parent().css("textDecoration") == "line-through") {
+    $(this).parent().css("textDecoration", none);
+    $(this).parent().css("opacity", 1);
   } else {
-    $("li").css("textDecoration", "line-through");
-    $("li").parent().css("opacity", "0.5");
+    $(this).parent().css("textDecoration", "line-through");
+    $(this).parent().css("opacity", "0.50");
   }
 }
 
-// function addTask() {
-//   var newTask = $("#add_to_list").val();
-//   if (newTask.length > 0) {
-//     $("#to_do_list").append(
-//       '<li ><input type="checkbox" id="mark_task_done" class="toggle"/ ><span class="text">' +
-//         newTask +
-//         ' </span><button class="destroy"></button></li>'
-//     );
-//     $("#add_to_list").val("");
+// function markAllItemAsCompleted() {
+//   if ($(this).parent().css("textDecoration") == "line-through") {
+//     $(this).parent().css("textDecoration", "none");
+//     $(this).parent().css("opacity", "1");
+//   } else {
+//     $(this).parent().css("textDecoration", "line-through");
+//     $(this).parent().css("opacity", "0.50");
 //   }
 // }
 
-// /RUNNINNG CODE
-
-// function addTask() {
-//   var newTask = $("#add_to_list").val();
-//   if (newTask.length > 0) {
-//     $("#to_do_list").append(
-//       '<li ><input type="checkbox" id="mark_task_done" class="toggle"/ ><span class="text">' +
-//         newTask +
-//         ' </span><button class="destroy"></button></li>'
-//     );
-//     $("#add_to_list").val("");
-//   }
+// function toggleAllItemCompleted() {
+//   $(this).closest("li").toggleClass("completedItem");
 // }
 
-//function addTask() {
-// let add_task_input = document.getElementById("add_task_input");
-// let add_task_button = document.getElementById("add_task_button");
-
-// add_task_input_value = add_task_input.val;
-// // Assuming that the local storage has some data
-// let web_task = localStorage.getItem("localtask");
-// if (web_task == null) {
-//   task_obj = [];
-// } else {
-//   task_obj = JSON.parse(web_task);
+// function ToggleAllItem() {
+//   $toDoList.find("li").addClass("completedItem", this.checked);
 // }
-
-// // adding new value to the array
-// // putting new value into the local storage
-// localStorage.setItem("localtask", task_obj);
-
-//   var newTaskItem = $("add_task_input").val();
-//   // to prevent adding empty items, we will check the length
-//   if (newTaskItem.length > 0) {
-//     $("added_task_list").append("<td>" + newTaskItem + "</td>");
-//     $("add_task_input").val("");
-//   }
-// }
-
-// $(document).ready(addTask());
-// $("#add_task_button").click(addTask());
-// var newTask = $("#add_to_list").val();
-// // to prevent adding empty items, we will check the length
-// if (newTask.length > 0) {
-//   $("#to_do_list").append("<li>" + newTask + "</li>");
-//   $("#add_to_list").val("");
-//}

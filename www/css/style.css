@@ -1,3 +1,8 @@
+h1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .logo {
   display: block;
   margin-left: auto;
@@ -52,6 +57,7 @@ button {
   bottom: 0;
   margin: auto 0;
   appearance: none;
+  border-style: solid;
 }
 
 #to_do_list li span {
@@ -68,6 +74,7 @@ button {
   font-size: 24px;
   margin: 0px 0 40px 0;
   position: relative;
+  margin-top: 15px;
 }
 
 #mark_task_completed {
@@ -100,25 +107,21 @@ button {
   display: block;
 }
 
-/* .main_content {
-  background-color: lightblue;
-  padding: 10px 10px;
-  color: white;
-  text-align: center;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-div {
-  display: block;
+#add_task_button {
+  background-color: #1abc9c;
+  margin-top: 20px;
 }
 
 .ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset {
-  width: 60%;
+  margin-top: 30px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.ui-footer.ui-bar-inherit {
+  position: fixed;
 }
 
 button#add_task_button {
-  width: 20%;
-} */
+  margin-top: 20px;
+}
