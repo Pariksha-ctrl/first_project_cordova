@@ -36,38 +36,6 @@
   </head>
 
   <body>
-    <!-- Start of main/landing page -->
-    <div data-role="page" id="main">
-      <!-- header -->
-      <div class="myHeader" data-role="header"></div>
-      <h1>My To Do List</h1>
-      <div class="header_logo>">
-        <img src="img/logo.png" class="logo" />
-      </div>
-      <!-- /header -->
-
-      <!-- content -->
-      <body>
-        <div class="main_content">
-          <input type="text" id="new_task" placeholder="Enter Task To Do" />
-          <button id="add_task_button">ADD</button>
-          <ul id="to_do_list"></ul>
-          <!-- <br />
-          <input type="checkbox" id="toggle_all_task_item>" />
-          <br /> -->
-          <br />
-          <button type="checkbox" id="delete_all_completed_task">
-            DELETE ALL COMPLETED TASK
-          </button>
-        </div>
-      </body>
-      <!-- /content -->
-      <!-- footer -->
-      <div data-role="footer" style="text-align: center"></div>
-      <!-- /footer -->
-    </div>
-    <!-- /main page -->
-
     <!-- Start of sign in page -->
     <div data-role="page" id="login">
       <!-- header -->
@@ -127,7 +95,6 @@
       <div role="main" class="ui-content">
         <label for="userName">Username:</label>
         <input type="text" name="userName" id="userName" value="" />
-        <br />
 
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" value="" />
@@ -420,11 +387,7 @@
           <option value="Zimbabwe">Zimbabwe</option>
                        
         </select>
-
         <br />
-        <br />
-        <br />
-
         <div style="text-align: center">
           <a href="#" id="user_signup" class="ui-btn ui-btn-a">Signup</a>
           <br />
@@ -437,7 +400,38 @@
       <div data-role="footer" style="text-align: center"></div>
       <!-- /footer -->
     </div>
-    <!-- /signup page -->
+    <!-- /signup page --
+
+
+    <!-- Start of main/landing page -->
+    <div data-role="page" id="main">
+      <!-- header -->
+      <div class="myHeader" data-role="header"></div>
+      <h1>My To Do List</h1>
+      <div class="header_logo>">
+        <img src="img/logo.png" class="logo" />
+      </div>
+      <!-- /header -->
+
+      <!-- content -->
+      <body>
+        <div class="main_content">
+          <input type="text" id="new_task" placeholder="Enter Task To Do" />
+          <button id="add_task_button">ADD</button>
+          <ul id="to_do_list"></ul>
+          <br />
+          <button type="checkbox" id="delete_all_completed_task">
+            DELETE ALL COMPLETED TASK
+          </button>
+        </div>
+      </body>
+      <!-- /content -->
+      <!-- footer -->
+      <div data-role="footer" style="text-align: center"></div>
+      <!-- /footer -->
+    </div>
+    <!-- /main page -->
+    >
 
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
